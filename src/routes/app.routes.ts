@@ -6,5 +6,6 @@ export class AppRoutes {
 
     public routes(app: express.Application): void {
         app.route("/").get(this.homeController.index);
+        app.route("/test").get(this.homeController.test);
     }
 }
