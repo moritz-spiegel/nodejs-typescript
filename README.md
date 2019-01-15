@@ -15,12 +15,21 @@ npm install
 npm run build
 npm start
 ```
-## Running in Docker
+## Running in Docker for Development
 ```
-docker build -t nodejs-typescript .
-docker run -p 3000:3000 nodejs-typescript
+docker build -f Dockerfile.dev -t nodejs-typescript:dev .
+docker run -p 3000:3000 nodejs-typescript:dev
 ```
-## Running with docker-compose
+### With Compose
+```
+docker-compose up
+```
+## Running in Docker for production
+```
+docker build -t nodejs-typescript:prod .
+docker run -p 3000:3000 nodejs-typescript:prod
+```
+### With Compose
 ```
 docker-compose up
 ```

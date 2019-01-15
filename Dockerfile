@@ -1,12 +1,12 @@
-FROM node:8-slim as build
-WORKDIR /server
+FROM node:8 as build
+WORKDIR /app
 COPY ./package.json ./package-lock.json ./
 RUN npm install
 COPY . .
 RUN npm run build
 
 FROM node:8-slim
-WORKDIR /server
-COPY --from=build /server/package.json /server/dist/ /server/node_modules/ ./
+WORKDIR /app
+COPY --from=build /app/package.json /app/dist/ /app/node_modules/ ./
 EXPOSE 3000
 CMD ["npm","start"]
