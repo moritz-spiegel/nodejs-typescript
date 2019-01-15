@@ -1,6 +1,6 @@
 # Nodejs TypeScript Starter
 
-# Getting started
+## Getting started
 - Clone the repository
 ```
 git clone https://github.com/moritz-spiegel/nodejs-typescript.git
@@ -15,12 +15,12 @@ npm install
 npm run build
 npm start
 ```
-# Running in Docker
+## Running in Docker
 ```
 docker build -t nodejs-typescript .
 docker run -p 3000:3000 nodejs-typescript
 ```
-# Running with docker-compose
+## Running with docker-compose
 ```
 docker-compose up
 ```
