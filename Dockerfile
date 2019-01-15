@@ -7,6 +7,6 @@ RUN npm run build
 
 FROM node:8-slim
 WORKDIR /server
-COPY --from=build /server/package.json /server/dist /server/node-modules ./
+COPY --from=build /server/package.json /server/dist/ /server/node_modules/ ./
 EXPOSE 3000
 CMD ["npm","start"]
