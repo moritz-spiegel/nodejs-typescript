@@ -1,0 +1,12 @@
+# docker-compose.pord.yml (Extended config for PORDUCTION)
+version: "3"
+
+services:
+  app:
+    # image: moritzspiegel/nodejs-typescript:prod
+    environment:
+      NODE_ENV: "prod"
+  
+  # proxy:
+    # image: moritzspiegel/proxy
+    # restart: always

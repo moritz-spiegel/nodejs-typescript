@@ -1,11 +1,14 @@
+# docker-compose.yml (Base)
 version: "3"
 
 services:
-  web:
-    build: .
-    command: npm start
-    volumes:
-      - ./dist:/server/dist
+  app:
+    build: ./app
+
+  proxy:
+    build: ./nginx
     ports:
-      - "3000:3000"
-      - "9200:9200"
+      - 80:80
+    links:
+      - app
+
