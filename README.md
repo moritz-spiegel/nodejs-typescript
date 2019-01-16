@@ -21,6 +21,7 @@ docker build -f Dockerfile.dev -t nodejs-typescript:dev .
 docker run -p 3000:3000 nodejs-typescript:dev
 ```
 ### With Compose
+- docker-compose up will merge the docker-compose.yml and the docker-compose.override.yml which we use to set our dev settings
 ```
 docker-compose up
 ```
@@ -30,6 +31,7 @@ docker build -t nodejs-typescript:prod .
 docker run -p 3000:3000 nodejs-typescript:prod
 ```
 ### With Compose
+- for production we want to merge the docker-compose.yml and the docker-compose.prod.yml
 ```
-docker-compose up
+docker-compose -f docker-compose.yml -f docker-compose.prod.yml up --build
 ```
